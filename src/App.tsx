@@ -1,18 +1,19 @@
-import React from "react";
+import { useState, useRef, useEffect } from "react";
 // import reactLogo from "./assets/react.svg";
 // import viteLogo from "/vite.svg";
 import "./App.css";
 
-// import { Suspense } from "react";
-// import { Canvas } from "@react-three/fiber";
+import { Suspense } from "react";
+import { Canvas } from "@react-three/fiber";
 
 // import { GridHelper } from "three";
 // import { extend } from "@react-three/fiber";
 
 import GlobeComponent from "./GlobeComponent";
+import React from "react";
 
 function App() {
-  // const [count, setCount] = useState(0);
+  const [count, setCount] = useState(0);
 
   // const meshRef = useRef<any>(null!);
 
@@ -33,7 +34,7 @@ function App() {
       {/* <ambientLight />
         <Suspense fallback={"Loading....."}> */}
       {/* <div ref={meshRef}> */}
-      <GlobeComponent />
+      {/* <GlobeComponent /> */}
       {/* </div> */}
       {/* </Suspense> */}
       {/* </Canvas> */}
