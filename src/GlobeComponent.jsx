@@ -1,11 +1,8 @@
 import React, { useState, useRef, useEffect } from "react";
-// import { Canvas } from "@react-three/fiber";
 import "./App.css";
 import Globe from "react-globe.gl";
 
 import * as d3 from "d3-dsv";
-
-// import * as THREE from "//unpkg.com/three/build/three.module.js";
 
 function GlobeComponent() {
   const [count, setCount] = useState(0);
@@ -18,13 +15,13 @@ function GlobeComponent() {
   // "three": "^0.170.0"
 
   /* BASIC */
-  const N = 300;
-  const gData = [...Array(N).keys()].map(() => ({
-    lat: (Math.random() - 0.5) * 180,
-    lng: (Math.random() - 0.5) * 360,
-    size: Math.random() / 3,
-    color: ["red", "white", "blue", "green"][Math.round(Math.random() * 3)],
-  }));
+  // const N = 300;
+  // const gData = [...Array(N).keys()].map(() => ({
+  //   lat: (Math.random() - 0.5) * 180,
+  //   lng: (Math.random() - 0.5) * 360,
+  //   size: Math.random() / 3,
+  //   color: ["red", "white", "blue", "green"][Math.round(Math.random() * 3)],
+  // }));
 
   /* HTML MARKERS */
   //   const markerSvg = `<svg viewBox="-4 0 36 36">
@@ -89,144 +86,137 @@ function GlobeComponent() {
 
   // useEffect(() => {
   //   // load data
-  //   fetch(
-  //     "https://raw.githubusercontent.com/datasets/population/refs/heads/main/data/population.csv"
-  //   )
-  //     // fetch("../datasets/world_population.csv")
+  //     fetch("../datasets/world_population.csv")
   //     .then((res) => res.text())
   //     .then((csv) =>
   //       d3.csvParse(csv, ({ lat, lng, pop }) => ({
   //         lat: +lat,
   //         lng: +lng,
   //         pop: +pop,
-  //         // lat: +15.3547,
-  //         // lng: +44.2066,
-  //         // pop: +2008000,
   //       }))
   //     )
-  //     .then((res) => console.log(res));
-  //   // .then(setPopData);
+  //   .then(setPopData);
   // }, []);
 
   /* US INTERNATIONAL OUTBOUNDS */
-  // const COUNTRY = "United States";
-  // const OPACITY = 0.22;
+  const COUNTRY = "United States";
+  const OPACITY = 0.22;
 
-  // const airportParse = ([
-  //   airportId,
-  //   name,
-  //   city,
-  //   country,
-  //   iata,
-  //   icao,
-  //   lat,
-  //   lng,
-  //   alt,
-  //   timezone,
-  //   dst,
-  //   tz,
-  //   type,
-  //   source,
-  // ]) => ({
-  //   airportId,
-  //   name,
-  //   city,
-  //   country,
-  //   iata,
-  //   icao,
-  //   lat,
-  //   lng,
-  //   alt,
-  //   timezone,
-  //   dst,
-  //   tz,
-  //   type,
-  //   source,
-  // });
-  // const routeParse = ([
-  //   airline,
-  //   airlineId,
-  //   srcIata,
-  //   srcAirportId,
-  //   dstIata,
-  //   dstAirportId,
-  //   codeshare,
-  //   stops,
-  //   equipment,
-  // ]) => ({
-  //   airline,
-  //   airlineId,
-  //   srcIata,
-  //   srcAirportId,
-  //   dstIata,
-  //   dstAirportId,
-  //   codeshare,
-  //   stops,
-  //   equipment,
-  // });
+  const airportParse = ([
+    airportId,
+    name,
+    city,
+    country,
+    iata,
+    icao,
+    lat,
+    lng,
+    alt,
+    timezone,
+    dst,
+    tz,
+    type,
+    source,
+  ]) => ({
+    airportId,
+    name,
+    city,
+    country,
+    iata,
+    icao,
+    lat,
+    lng,
+    alt,
+    timezone,
+    dst,
+    tz,
+    type,
+    source,
+  });
+  const routeParse = ([
+    airline,
+    airlineId,
+    srcIata,
+    srcAirportId,
+    dstIata,
+    dstAirportId,
+    codeshare,
+    stops,
+    equipment,
+  ]) => ({
+    airline,
+    airlineId,
+    srcIata,
+    srcAirportId,
+    dstIata,
+    dstAirportId,
+    codeshare,
+    stops,
+    equipment,
+  });
 
-  // const globeEl = useRef();
-  // const [airports, setAirports] = useState([]);
-  // const [routes, setRoutes] = useState([]);
+  const globeEl = useRef();
+  const [airports, setAirports] = useState([]);
+  const [routes, setRoutes] = useState([]);
 
-  // const indexBy = (list: any, iteratee: any, context: any) => {
-  //   return list.reduce((map: any, obj: any) => {
-  //     const key =
-  //       typeof iteratee === "string"
-  //         ? obj[iteratee]
-  //         : iteratee.call(context, obj);
-  //     map[key] = obj;
-  //     return map;
-  //   }, {});
-  // };
+  const indexBy = (list, iteratee, context) => {
+    return list.reduce((map, obj) => {
+      const key =
+        typeof iteratee === "string"
+          ? obj[iteratee]
+          : iteratee.call(context, obj);
+      map[key] = obj;
+      return map;
+    }, {});
+  };
 
-  // useEffect(() => {
-  //   // load data
-  //   Promise.all([
-  //     fetch(
-  //       "https://raw.githubusercontent.com/jpatokal/openflights/master/data/airports.dat"
-  //     )
-  //       .then((res) => res.text())
-  //       .then((d) => d3.csvParseRows(d, airportParse)),
-  //     fetch(
-  //       "https://raw.githubusercontent.com/jpatokal/openflights/master/data/routes.dat"
-  //     )
-  //       .then((res) => res.text())
-  //       .then((d) => d3.csvParseRows(d, routeParse)),
-  //   ]).then(([airports, routes]) => {
-  //     const byIata = indexBy(airports, "iata", false);
+  useEffect(() => {
+    // load data
+    Promise.all([
+      fetch(
+        "https://raw.githubusercontent.com/jpatokal/openflights/master/data/airports.dat"
+      )
+        .then((res) => res.text())
+        .then((d) => d3.csvParseRows(d, airportParse)),
+      fetch(
+        "https://raw.githubusercontent.com/jpatokal/openflights/master/data/routes.dat"
+      )
+        .then((res) => res.text())
+        .then((d) => d3.csvParseRows(d, routeParse)),
+    ]).then(([airports, routes]) => {
+      const byIata = indexBy(airports, "iata", false);
 
-  //     const filteredRoutes = routes
-  //       .filter(
-  //         (d) =>
-  //           byIata.hasOwnProperty(d.srcIata) && byIata.hasOwnProperty(d.dstIata)
-  //       ) // exclude unknown airports
-  //       .filter((d) => d.stops === "0") // non-stop flights only
-  //       .map((d) =>
-  //         Object.assign(d, {
-  //           srcAirport: byIata[d.srcIata],
-  //           dstAirport: byIata[d.dstIata],
-  //         })
-  //       )
-  //       .filter(
-  //         (d) =>
-  //           d.srcAirport.country === COUNTRY && d.dstAirport.country !== COUNTRY
-  //       ); // international routes from country
+      const filteredRoutes = routes
+        .filter(
+          (d) =>
+            byIata.hasOwnProperty(d.srcIata) && byIata.hasOwnProperty(d.dstIata)
+        ) // exclude unknown airports
+        .filter((d) => d.stops === "0") // non-stop flights only
+        .map((d) =>
+          Object.assign(d, {
+            srcAirport: byIata[d.srcIata],
+            dstAirport: byIata[d.dstIata],
+          })
+        )
+        .filter(
+          (d) =>
+            d.srcAirport.country === COUNTRY && d.dstAirport.country !== COUNTRY
+        ); // international routes from country
 
-  //     setAirports(airports);
-  //     setRoutes(filteredRoutes);
-  //   });
-  // }, []);
+      setAirports(airports);
+      setRoutes(filteredRoutes);
+    });
+  }, []);
 
-  // useEffect(() => {
-  //   // aim at continental US centroid
-  //   globeEl.current.pointOfView({ lat: 39.6, lng: -98.5, altitude: 2 });
-  // }, []);
+  useEffect(() => {
+    // aim at continental US centroid
+    globeEl.current.pointOfView({ lat: 39.6, lng: -98.5, altitude: 2 });
+  }, []);
 
   return (
     <>
       {/* US INTERNATIONAL OUTBOUNDS */}
-      {/* <Globe
+      <Globe
         ref={globeEl}
         globeImageUrl="//unpkg.com/three-globe/example/img/earth-night.jpg"
         arcsData={routes}
@@ -249,7 +239,7 @@ function GlobeComponent() {
         pointAltitude={0}
         pointRadius={0.02}
         pointsMerge={true}
-      /> */}
+      />
 
       {/* POPULATION HEAT MAP */}
       {/* <Globe
@@ -311,12 +301,12 @@ function GlobeComponent() {
       /> */}
 
       {/* Basic */}
-      <Globe
+      {/* <Globe
         globeImageUrl="//unpkg.com/three-globe/example/img/earth-night.jpg"
         pointsData={gData}
         pointAltitude="size"
         pointColor="color"
-      />
+      /> */}
     </>
   );
 }
