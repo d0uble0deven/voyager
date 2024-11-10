@@ -7,11 +7,17 @@ import "./App.css";
 // import { Canvas } from "@react-three/fiber";
 
 import GlobeComponent from "./GlobeComponent";
+import NavBar from "./Navbar";
+import DealsSection from "./DealsSection";
+import DrawerComponent from "./DrawerComponent";
 
 function App() {
   return (
     <>
-      <GlobeComponent />
+      {/* <NavBar /> */}
+      {/* <GlobeComponent /> */}
+      <DrawerComponent />
+      {/* <DealsSection /> */}
     </>
   );
 }
