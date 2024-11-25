@@ -78,7 +78,7 @@ function SwipeableEdgeDrawer(props) {
         </Button>
         <Button onClick={toggleBestDealsDrawer(true)}>Open Best Deals</Button>
       </Box>
-      <GlobeComponent />
+      {/* <GlobeComponent /> */}
       <SwipeableDrawer
         container={container}
         anchor="bottom"

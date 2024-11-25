@@ -1,0 +1,42 @@
+.nav {
+  margin: 0;
+  font-family: "Nunito Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 10vh;
+  list-style-type: none;
+  padding-left: 0px;
+  color: #ff00ff;
+  width: 25vw;
+  height: 100%;
+}
+
+a {
+  color: grey;
+}
+
+a:hover {
+  color: white;
+  background-color: black;
+}
+
+#selected,
+#selected a {
+  color: white !important;
+  background-color: black;
+  font-weight: bold;
+}
+
+.logo {
+  font-size: 8vh;
+}
+
+li {
+  list-style-type: none;
+  padding-left: 0px;
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+}

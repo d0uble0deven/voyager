@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import "./App.css";
+import "./GlobeComponent.css";
 import Globe from "react-globe.gl";
 
 import * as d3 from "d3-dsv";
@@ -210,13 +210,22 @@ function GlobeComponent() {
 
   useEffect(() => {
     // aim at continental US centroid
+    console.log('globeEl.current: ', globeEl )
     globeEl.current.pointOfView({ lat: 39.6, lng: -98.5, altitude: 2 });
   }, []);
 
   return (
     <>
+    <div className="container">
       {/* US INTERNATIONAL OUTBOUNDS */}
-      <Globe
+      <Globe height="30vh" width={1300}
+        options={{
+          enableGlobeGlow: true,
+          globeGlowCoefficient: 0.1,
+          globeGlowColor: 'gold',
+          globeGlowPower: 4,
+          globeGlowRadiusScale: 0.5,
+        }}
         ref={globeEl}
         globeImageUrl="//unpkg.com/three-globe/example/img/earth-night.jpg"
         arcsData={routes}
@@ -307,6 +316,7 @@ function GlobeComponent() {
         pointAltitude="size"
         pointColor="color"
       /> */}
+      </div>
     </>
   );
 }
