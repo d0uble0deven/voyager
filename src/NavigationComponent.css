@@ -3,7 +3,7 @@
   font-family: "Nunito Sans", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-size: 10vh;
+  font-size: 9vh;
   list-style-type: none;
   padding-left: 0px;
   color: #ff00ff;
@@ -20,8 +20,8 @@ a:hover {
   background-color: black;
 }
 
-#selected,
-#selected a {
+#selected a,
+#selected {
   color: white !important;
   background-color: black;
   font-weight: bold;

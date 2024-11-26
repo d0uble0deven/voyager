@@ -1,195 +1,64 @@
-import * as React from "react";
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
-import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
-import CardActionArea from "@mui/material/CardActionArea";
-import CardActions from "@mui/material/CardActions";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import React, { useEffect, useRef } from "react";
 
-function CardComponent() {
+import "./CardComponent.css";
+
+/*
+  get data to port through component -- DONE
+  add videos -- DONE
+  research perpelexity gpt api
+  create new page for Planning
+*/
+
+function CardComponent(props) {
+  const { data } = props;
+  console.log("data: ", data);
+
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      console.log("videoRef.current: ", videoRef.current);
+      const playPromise = videoRef.current.play();
+      if (playPromise !== undefined) {
+        playPromise
+          .then(() => {
+            // Video is playing
+            console.log("Video is playing");
+          })
+          .catch((error) => {
+            console.error("Error attempting to play the video:", error);
+          });
+      }
+    }
+  }, [data?.url]);
+
   return (
     <>
-      {/* <div className="edge bg boundary">
-        <img
-          className="edge bg"
-          src="https://flowbite.com/docs/images/blog/image-4.jpg"
-          alt=""
-        ></img>
-        <section className="edge bg">
-          <h1 className="edge bg">title</h1>
-          <p className="edge bg"></p>
-        </section>
-      </div> */}
-
-      <Card sx={{ maxWidth: "40%", margin: "10px 0" }}>
-        <CardActionArea>
-          <CardMedia
-            component="img"
-            height="140"
-            image="https://mui.com/static/images/cards/contemplative-reptile.jpg"
-            alt="green iguana"
-          />
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
-              Explore the Galapagos Island
-            </Typography>
-            <Typography variant="body2" sx={{ color: "text.secondary" }}>
-              Santiago, Chile
-            </Typography>
-            <Typography variant="body2" sx={{ color: "text.secondary" }}>
-              $1,900
-            </Typography>
-            <Typography variant="body2" sx={{ color: "text.secondary" }}>
-              March 20, 2025
-            </Typography>
-            <Typography variant="body2" sx={{ color: "text.secondary" }}>
-              Lizards are a widespread group of squamate reptiles, with over
-              6,000 species, ranging across all continents except Antarctica
-            </Typography>
-          </CardContent>
-        </CardActionArea>
-        <CardActions>
-          <Button size="small">
-            <ShoppingCartIcon></ShoppingCartIcon>
-          </Button>
-          <Button size="small" color="primary">
-            View Tour
-          </Button>
-        </CardActions>
-      </Card>
-
-      <Card sx={{ maxWidth: "40%", margin: "10px 0" }}>
-        <CardActionArea>
-          <CardMedia
-            component="img"
-            height="140"
-            image="https://mui.com/static/images/cards/contemplative-reptile.jpg"
-            alt="green iguana"
-          />
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
-              Fred Again... at the Pyramids
-            </Typography>
-            <Typography variant="body2" sx={{ color: "text.secondary" }}>
-              Cairo, Egypt
-            </Typography>
-            <Typography variant="body2" sx={{ color: "text.secondary" }}>
-              $2,900
-            </Typography>
-            <Typography variant="body2" sx={{ color: "text.secondary" }}>
-              June 2, 2025
-            </Typography>
-            <Typography variant="body2" sx={{ color: "text.secondary" }}>
-              Lizards are a widespread group of squamate reptiles, with over
-              6,000 species, ranging across all continents except Antarctica
-            </Typography>
-          </CardContent>
-        </CardActionArea>
-        <CardActions>
-          <Button size="small">
-            <ShoppingCartIcon></ShoppingCartIcon>
-          </Button>
-          <Button size="small" color="primary">
-            Details
-          </Button>
-        </CardActions>
-      </Card>
-
-      <Card sx={{ maxWidth: "40%", margin: "10px 0" }}>
-        <CardActionArea>
-          <CardMedia
-            component="img"
-            height="140"
-            image="https://mui.com/static/images/cards/contemplative-reptile.jpg"
-            alt="green iguana"
-          />
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
-              Fred Again... at the Pyramids
-            </Typography>
-            <Typography variant="body2" sx={{ color: "text.secondary" }}>
-              Cairo, Egypt
-            </Typography>
-            <Typography variant="body2" sx={{ color: "text.secondary" }}>
-              $2,900
-            </Typography>
-            <Typography variant="body2" sx={{ color: "text.secondary" }}>
-              June 2, 2025
-            </Typography>
-            <Typography variant="body2" sx={{ color: "text.secondary" }}>
-              Lizards are a widespread group of squamate reptiles, with over
-              6,000 species, ranging across all continents except Antarctica
-            </Typography>
-          </CardContent>
-        </CardActionArea>
-        <CardActions>
-          <Button size="small">
-            <ShoppingCartIcon></ShoppingCartIcon>
-          </Button>
-          <Button size="small" color="primary">
-            Details
-          </Button>
-        </CardActions>
-      </Card>
-
-      <Card sx={{ maxWidth: "40%", margin: "10px 0" }}>
-        <CardActionArea>
-          <CardMedia
-            component="img"
-            height="140"
-            image="https://mui.com/static/images/cards/contemplative-reptile.jpg"
-            alt="green iguana"
-          />
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
-              Fred Again... at the Pyramids
-            </Typography>
-            <Typography variant="body2" sx={{ color: "text.secondary" }}>
-              Cairo, Egypt
-            </Typography>
-            <Typography variant="body2" sx={{ color: "text.secondary" }}>
-              $2,900
-            </Typography>
-            <Typography variant="body2" sx={{ color: "text.secondary" }}>
-              June 2, 2025
-            </Typography>
-            <Typography variant="body2" sx={{ color: "text.secondary" }}>
-              Lizards are a widespread group of squamate reptiles, with over
-              6,000 species, ranging across all continents except Antarctica
-            </Typography>
-          </CardContent>
-        </CardActionArea>
-        <CardActions>
-          <Button size="small">
-            <ShoppingCartIcon></ShoppingCartIcon>
-          </Button>
-          <Button size="small" color="primary">
-            Details
-          </Button>
-        </CardActions>
-      </Card>
-
-      {/* <a
-        href="#"
-        class="flex flex-col items-center bg-black border border-black-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-black-100 dark:border-black-700 dark:bg-black-800 dark:hover:bg-black-700"
-      >
-        <img
-          class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg"
-          src="https://flowbite.com/docs/images/blog/image-4.jpg"
-          alt=""
-        ></img>
-        <div class="flex flex-col justify-between p-4 leading-normal">
-          <h5 class="mb-2 text-2xl font-bold tracking-tight text-black-900 dark:text-black">
-            Noteworthy technology acquisitions 2021
-          </h5>
-          <p class="mb-3 font-normal text-black-700 dark:text-black-400">
-            Here are the biggest enterprise technology acquisitions of 2021 so
-            far, in reverse chronological order.
-          </p>
+      <div className="Card">
+        <div className="Title">
+          <h1>{data?.title || "No Title Available"}</h1>
         </div>
-      </a> */}
+        <div className="Content">
+          <h3>{data?.content || "No Content Available"}</h3>
+          <p>{data?.fragment || "No Fragment Available"}</p>
+        </div>
+        <video
+          ref={videoRef}
+          style={{
+            zIndex: "1000",
+            width: "100%",
+            objectFit: "cover",
+            // objectPosition: "bottom 1% right 1%",
+            aspectRatio: "16/9",
+          }}
+          muted
+          autoPlay
+          loop
+        >
+          <source src={data?.video || "No URL Available"} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
     </>
   );
 }

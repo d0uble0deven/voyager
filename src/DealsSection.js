@@ -5,9 +5,7 @@ import CardComponent from "./CardComponent";
 function DealsSection() {
   return (
     <>
-      card 1
       <CardComponent />
-      card 2
     </>
   );
 }

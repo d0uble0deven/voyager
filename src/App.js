@@ -27,27 +27,27 @@ function App() {
           <NavBar />
         </div>
         <div className="ExploreComponent">
-          ExploreComponent
+          New Experiences
           <ExploreComponent />
         </div>
         <div className="DiscoverComponent">
-          DiscoverComponent
+          Cheap Deals
           <DiscoverComponent />
         </div>
         <div className="globe-container">
           globe-container
-          <GlobeComponent />
+          {/* <GlobeComponent /> */}
         </div>
         <div className="PlacesComponent">
-          PlacesComponent
+          Unexplored Places
           <PlacesComponent />
         </div>
         <div className="StaysComponent">
-          StaysComponent
+          Great Stays
           <StaysComponent />
         </div>
         <div className="TripsComponent">
-          TripsComponent
+          Popular Trips
           <TripsComponent />
         </div>
         {/* <div className="c">c</div>

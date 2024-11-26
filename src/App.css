@@ -26,47 +26,47 @@
   height: 100%;
   grid-area: 1 / 2 / 2 / 6;
   border: purple 2px dotted;
-  background-color: purple;
+  /* background-color: purple; */
 }
 
 .ExploreComponent {
   grid-area: 2 / 2 / 4 / 6;
   border: black 2px dotted;
-  background-color: yellow;
+  /* background-color: yellow; */
   height: 100%;
 }
 
 .DiscoverComponent {
   grid-area: 4 / 2 / 6 / 6;
   border: black 2px dotted;
-  background-color: magenta;
+  /* background-color: magenta; */
   height: 100%;
 }
 
 .globe-container {
   grid-area: 6 / 2 / 8 / 6;
   border: black 2px dotted;
-  background-color: green;
+  /* background-color: green; */
   height: 100%;
 }
 
 .PlacesComponent {
   grid-area: 8 / 2 / 10 / 6;
   border: black 2px dotted;
-  background-color: cornflowerblue;
+  /* background-color: cornflowerblue; */
   height: 100%;
 }
 
 .StaysComponent {
   grid-area: 10 / 2 / 12 / 6;
   border: black 2px dotted;
-  background-color: red;
+  /* background-color: red; */
   height: 100%;
 }
 
 .TripsComponent {
   grid-area: 12 / 2 / 14 / 6;
   border: black 2px dotted;
-  background-color: orange;
+  /* background-color: orange; */
   height: 100%;
 }
