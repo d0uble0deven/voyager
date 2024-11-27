@@ -1,0 +1,12 @@
+.travel-agent-container {
+  width: 50vw;
+  height: auto;
+  border: red 1px dotted;
+  background-color: cornflowerblue;
+}
+
+.travel-agent-input {
+  width: 50vw;
+  height: 5vh;
+  border: red 1px dotted;
+}

@@ -8,6 +8,9 @@ function NavBar() {
   return (
     <>
       <nav className="navbar">
+        <li>
+          <a href="#DealDetailsPage">DealDetailsPage</a>
+        </li>
         <FlightInspoComponent />
         <TestDataButton />
         {/* <div className="navbar-left">

@@ -3,6 +3,7 @@ import "./NavigationComponent.css";
 import { Route, Routes, Link, useLocation } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import DealDetailsPage from "./pages/DealDetailsPage";
+import PlanningPage from "./pages/PlanningPage";
 
 import ExploreComponent from "./ExploreComponent";
 import DiscoverComponent from "./DiscoverComponent";
@@ -36,7 +37,7 @@ function NavigationComponent() {
       <nav className="nav" onClick={(e) => changePage(e)}>
         <div className="nav-center">
           <ul className="nav-links">
-            <HashLink to="/">Voyager</HashLink>
+            <HashLink to="#DealDetailsPage">Voyager</HashLink>
             <li id={`${activeNode === "Explore" ? "selected" : ""}`}>
               <HashLink to="#ExploreComponent">Explore</HashLink>
             </li>
@@ -52,6 +53,9 @@ function NavigationComponent() {
             <li id={`${activeNode === "Trips" ? "selected" : ""}`}>
               <HashLink to="#TripsComponent">Trips</HashLink>
             </li>
+            <li id={`${activeNode === "Trips" ? "selected" : ""}`}>
+              <HashLink to="#PlanningPage">PlanningPage</HashLink>
+            </li>
           </ul>
         </div>
       </nav>
@@ -63,6 +67,7 @@ function NavigationComponent() {
         <Route path="#PlacesComponent" element={<PlacesComponent />} />
         <Route path="#StaysComponent" element={<StaysComponent />} />
         <Route path="#TripsComponent" element={<TripsComponent />} />
+        <Route path="#PlanningPage" element={<PlanningPage />} />
       </Routes>
     </>
   );
