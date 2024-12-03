@@ -35,21 +35,14 @@ function CardComponent(props) {
   return (
     <>
       <div className="Card">
-        <div className="Title">
-          <h1>{data?.title || "No Title Available"}</h1>
-        </div>
-        <div className="Content">
-          <h3>{data?.content || "No Content Available"}</h3>
-          <p>{data?.fragment || "No Fragment Available"}</p>
-        </div>
         <video
           ref={videoRef}
           style={{
             zIndex: "1000",
             width: "100%",
             objectFit: "cover",
-            // objectPosition: "bottom 1% right 1%",
             aspectRatio: "16/9",
+            borderRadius: "10px",
           }}
           muted
           autoPlay
@@ -58,6 +51,13 @@ function CardComponent(props) {
           <source src={data?.video || "No URL Available"} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
+        <div className="Title">
+          <h1>{data?.title || "No Title Available"}</h1>
+        </div>
+        <div className="Content">
+          <h3>{data?.content || "No Content Available"}</h3>
+          <p>{data?.fragment || "No Fragment Available"}</p>
+        </div>
       </div>
     </>
   );

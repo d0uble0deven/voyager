@@ -1,3 +1,8 @@
+.title {
+  font-size: 13vh;
+  margin-bottom: 15px;
+}
+
 .nav {
   margin: 0;
   font-family: "Nunito Sans", sans-serif;
@@ -11,16 +16,19 @@
   height: 100%;
 }
 
-a {
+a,
+.title {
   color: grey;
 }
 
-a:hover {
+a:hover,
+.title:hover {
   color: white;
   background-color: black;
 }
 
 #selected a,
+#selected .title,
 #selected {
   color: white !important;
   background-color: black;

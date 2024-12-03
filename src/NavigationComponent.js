@@ -37,7 +37,9 @@ function NavigationComponent() {
       <nav className="nav" onClick={(e) => changePage(e)}>
         <div className="nav-center">
           <ul className="nav-links">
-            <HashLink to="#DealDetailsPage">Voyager</HashLink>
+            <HashLink to="#DealDetailsPage">
+              <h1 className="title condiment-regular">Voyager</h1>
+            </HashLink>
             <li id={`${activeNode === "Explore" ? "selected" : ""}`}>
               <HashLink to="#ExploreComponent">Explore</HashLink>
             </li>
@@ -54,7 +56,7 @@ function NavigationComponent() {
               <HashLink to="#TripsComponent">Trips</HashLink>
             </li>
             <li id={`${activeNode === "Trips" ? "selected" : ""}`}>
-              <HashLink to="#PlanningPage">PlanningPage</HashLink>
+              <HashLink to="#PlanningPage">Planning</HashLink>
             </li>
           </ul>
         </div>

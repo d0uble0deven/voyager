@@ -11,7 +11,7 @@ function NavBar() {
         <li>
           <a href="#DealDetailsPage">DealDetailsPage</a>
         </li>
-        <FlightInspoComponent />
+        {/* <FlightInspoComponent /> */}
         <TestDataButton />
         {/* <div className="navbar-left">
           <a href="/" className="logo">

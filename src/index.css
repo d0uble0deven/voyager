@@ -15,3 +15,9 @@ body {
 code {
   font-family: "nunito-sans";
 }
+
+.condiment-regular {
+  font-family: "Condiment", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
