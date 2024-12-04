@@ -48,6 +48,10 @@
   font-weight: lighter;
 }
 
+/*
+  keep these for the grid properties
+*/
+
 .ExploreComponent {
   grid-area: 2 / 2 / 4 / 6;
   /* border: black 2px dotted; */
