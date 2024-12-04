@@ -8,7 +8,7 @@ function PlanningPage() {
       <h1>PlanningPage</h1>
       <div>
         <PerplexityComponent />
-        <TravelAgentComponent />
+        {/* <TravelAgentComponent /> */}
       </div>
     </>
   );

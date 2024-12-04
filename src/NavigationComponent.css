@@ -8,30 +8,37 @@
   font-family: "Nunito Sans", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-size: 9vh;
+  font-size: 7vh;
   list-style-type: none;
   padding-left: 0px;
   color: #ff00ff;
   width: 25vw;
   height: 100%;
+  /* box-shadow: 5px 0 5px -5px black, -5px 0 5px -5px black; */
 }
 
 a,
 .title {
-  color: grey;
+  color: white;
+  /* color: grey; */
 }
 
 a:hover,
 .title:hover {
   color: white;
-  background-color: black;
+  background-color: #ee7663;
+  /* background-color: cornflowerblue; */
+  /* background-color: black; */
+  transition: background-color 0.3s ease;
 }
 
 #selected a,
 #selected .title,
 #selected {
   color: white !important;
-  background-color: black;
+  /* background-color: black; */
+  /* background-color: cornflowerblue; */
+  background-color: #ee7663;
   font-weight: bold;
 }
 

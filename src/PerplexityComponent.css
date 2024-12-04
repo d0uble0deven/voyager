@@ -1,0 +1,12 @@
+.perplexity-container {
+  width: 50vw;
+  height: auto;
+  border: red 1px dotted;
+  background-color: cornflowerblue;
+}
+
+.perplexity-input {
+  width: 50vw;
+  height: 5vh;
+  border: red 1px dotted;
+}

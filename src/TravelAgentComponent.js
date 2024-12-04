@@ -6,7 +6,7 @@ import Anthropic from "@anthropic-ai/sdk";
 
 const anthropic = new Anthropic({
   apiKey: process.env.REACT_APP_ANTHROPIC_API_KEY,
-  dangerouslyAllowBrowser: true, // defaults to process.env["ANTHROPIC_API_KEY"]
+  dangerouslyAllowBrowser: true,
 });
 
 const TravelAgentComponent = () => {

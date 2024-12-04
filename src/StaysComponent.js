@@ -1,5 +1,5 @@
 import React from "react";
-import CardComponent from "./CardComponent";
+import CardComponent from "./Molecules/CardComponent";
 
 import Glider from "react-glider";
 import "glider-js/glider.min.css";

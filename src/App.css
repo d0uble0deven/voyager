@@ -8,11 +8,24 @@
   grid-template-rows: 100px 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; /* 8 rows */
   grid-column-gap: 0px;
   grid-row-gap: 0px;
+  /* background: linear-gradient(90deg, #f0e4f7, #ebf7e4); */
+  /* background: linear-gradient(90deg, #e4ebf7, #f8f0e3); */
+  background-color: white;
+  /* background-color: #e4ebf7; */
+  /* background-color: #f8f0e3; */
+  /* background-color: #e4f7f0; */
+  /* background-color: #f0e4f7; */
+  /* background-color: #ebf7e4; */
 }
 
 .side-bar-container {
   width: 25vw;
   grid-area: 1 / 1 / 6 / 2;
+  background-color: cornflowerblue;
+  /* background-color: #ee7663; */
+  /* background-color: #dbee63; */
+  /* background-color: white; */
+  margin-right: 1vw;
 }
 
 .side-bar {

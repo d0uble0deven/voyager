@@ -1,0 +1,73 @@
+.Card {
+  background-color: cornflowerblue;
+  /* background-color: #9381ff; */
+  border-radius: 10px;
+  border: 3px solid cornflowerblue;
+  /* border: 3px solid #9381ff; */
+  color: #ffffff;
+  font-weight: 700;
+  margin: 10px;
+
+  display: flex;
+  flex-direction: column;
+  min-height: 32rem;
+  max-height: fit-content;
+}
+
+.Card-Container:hover .Card {
+  background-color: #ee7663; /* Change to your desired background color */
+  border: 3px solid #ee7663;
+}
+/* .Card-Container:hover .Card, */
+.Card-Container:hover .Card .Title,
+.Card-Container:hover .Card .Title h1 {
+  background-color: #ee7663; /* Change to your desired background color */
+}
+
+.Card,
+.Card .Title,
+.Card .Title h1 {
+  transition: background-color 0.3s ease;
+}
+
+.Card .Title {
+  padding: 15px 0;
+  display: flex;
+  justify-content: center;
+  background-color: cornflowerblue;
+}
+
+.Card .Title h1 {
+  background-color: cornflowerblue;
+  min-height: 88px;
+  padding: 0 20px;
+}
+
+.Card .Content {
+  flex: 1;
+  padding: 35px;
+  background-color: #ffffff;
+  color: #000000;
+  text-align: center;
+  height: 100vh;
+  font-weight: lighter;
+  border-radius: 10px;
+  max-height: 7rem;
+  /* background-color: cornflowerblue; */
+}
+.Card .Content h3 {
+  background-color: #ffffff;
+  /* background-color: cornflowerblue; */
+  /* background-color: #e4ebf7; */
+  background-color: #f8f0e3;
+  /* background-color: #e4f7f0; */
+  /* background-color: #f0e4f7; */
+  /* background-color: #ebf7e4; */
+}
+
+p {
+  text-align: center;
+  color: #000000;
+  background-color: #ffffff;
+  padding: 3px 0;
+}

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import CardComponent from "./CardComponent";
+import CardComponent from "./Molecules/CardComponent";
 
 import Glider from "react-glider";
 import "glider-js/glider.min.css";
@@ -45,7 +45,7 @@ function ExploreComponent() {
       <Glider
         draggable
         hasDots
-        slidesToShow={1.5}
+        slidesToShow={1.15}
         slidesToScroll="auto"
         scrollLock="true"
         itemWidth="500px"

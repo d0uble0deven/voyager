@@ -1,6 +1,6 @@
 import React from "react";
 import "./DealsSection.css";
-import CardComponent from "./CardComponent";
+import CardComponent from "./Molecules/CardComponent";
 
 function DealsSection() {
   return (
