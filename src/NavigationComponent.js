@@ -5,12 +5,6 @@ import { HashLink } from "react-router-hash-link";
 import DealDetailsPage from "./pages/DealDetailsPage";
 import PlanningPage from "./pages/PlanningPage";
 
-import ExploreComponent from "./ExploreComponent";
-import DiscoverComponent from "./DiscoverComponent";
-import PlacesComponent from "./PlacesComponent";
-import StaysComponent from "./StaysComponent";
-import TripsComponent from "./TripsComponent";
-
 function NavigationComponent() {
   const [activeNode, setActiveNode] = useState("");
   const changePage = (e) => {
@@ -62,14 +56,14 @@ function NavigationComponent() {
         </div>
       </nav>
       <Routes>
-        <Route path="/" />
+        {/* <Route path="/" />
         <Route path="#DealDetailsPage" element={<DealDetailsPage />} />
         <Route path="#ExploreComponent" element={<ExploreComponent />} />
         <Route path="#DiscoverComponent" element={<DiscoverComponent />} />
         <Route path="#PlacesComponent" element={<PlacesComponent />} />
         <Route path="#StaysComponent" element={<StaysComponent />} />
         <Route path="#TripsComponent" element={<TripsComponent />} />
-        <Route path="#PlanningPage" element={<PlanningPage />} />
+        <Route path="#PlanningPage" element={<PlanningPage />} /> */}
       </Routes>
     </>
   );
