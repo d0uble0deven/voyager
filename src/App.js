@@ -8,61 +8,35 @@ import DealsSection from "./DealsSection";
 // import DrawerComponent from "./DrawerComponent";
 import DealDetailsPage from "./pages/DealDetailsPage";
 import PlanningPage from "./pages/PlanningPage";
+import DiscoveryPage from "./pages/DiscoveryPage";
+import TripHistoryPage from "./pages/TripHistoryPage";
 
 import CardCarousel from "./Organisms/CardCarousel";
 
 import DiscoverMockData from "./MockData/DiscoverMockData";
 
+import { Route, Routes, Link, useLocation } from "react-router-dom";
+
 function App() {
-  const [discoverData, setDiscoverData] = useState([]);
-
-  useEffect(() => {
-    if (discoverData.length === 0) {
-      setDiscoverData(DiscoverMockData);
-    }
-  }, []);
-
   return (
     <>
-      <div className="grid">
-        <div className="side-bar-container">
-          <div className="side-bar">
-            <NavigationComponent />
-          </div>
-        </div>
-        <div className="top-bar">
-          <NavBar />
-        </div>
-        <div className="ExploreComponent">
-          <hr />
-          {discoverData &&
-            discoverData?.length &&
-            discoverData?.map((section, sectionIndex) => {
-              const [sectionTitle, experiences] = Object.entries(section)[0];
-              return (
-                <div key={sectionIndex}>
-                  <div className="experiences-list">
-                    <CardCarousel
-                      sectionTitle={sectionTitle}
-                      experiences={experiences}
-                      idx={discoverData.indexOf(section)}
-                    />
-                  </div>
-                </div>
-              );
-            })}
-        </div>
-        {/* <div className="globe-container">
-          globe-container
-          <GlobeComponent />
-          </div> */}
-        <hr />
-        {/* <div className="c">c</div>
-        <div className="d">d</div>
-        <div className="e">e</div> */}
-        {/* <DrawerComponent /> */}
-        {/* <DealsSection /> */}
-      </div>
+      {/* <DiscoveryPage /> */}
+      <Routes>
+        <Route path="/DealDetailsPage" element={<DealDetailsPage />} />
+        <Route path="/PlanningPage" element={<PlanningPage />} />
+        <Route path="/TripHistoryPage" element={<TripHistoryPage />} />
+        {/* <Route path="/" /> */}
+        <Route path="/" element={<DiscoveryPage />} />
+
+        {/* <Route path="/" />
+        <Route path="#DealDetailsPage" element={<DealDetailsPage />} />
+        <Route path="#ExploreComponent" element={<ExploreComponent />} />
+        <Route path="#DiscoverComponent" element={<DiscoverComponent />} />
+        <Route path="#PlacesComponent" element={<PlacesComponent />} />
+        <Route path="#StaysComponent" element={<StaysComponent />} />
+        <Route path="#TripsComponent" element={<TripsComponent />} />
+        <Route path="#PlanningPage" element={<PlanningPage />} /> */}
+      </Routes>
     </>
   );
 }

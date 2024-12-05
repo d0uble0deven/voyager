@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./NavigationComponent.css";
-import { Route, Routes, Link, useLocation } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import DealDetailsPage from "./pages/DealDetailsPage";
 import PlanningPage from "./pages/PlanningPage";
+import DiscoveryPage from "./pages/DiscoveryPage";
 
 function NavigationComponent() {
   const [activeNode, setActiveNode] = useState("");
@@ -11,30 +11,42 @@ function NavigationComponent() {
     setActiveNode(e.target.innerText);
   };
 
-  function ScrollToTop() {
-    let { hash } = useLocation();
-    useEffect(() => {
-      if (hash) {
-        const element = document.querySelector(`.${hash.slice(1)}`);
-        if (element) {
-          element.scrollIntoView({ behavior: "smooth" });
-        }
-      }
-    }, [hash]);
+  // function ScrollToTop() {
+  //   let { hash } = useLocation();
+  //   useEffect(() => {
+  //     if (hash) {
+  //       const element = document.querySelector(`.${hash.slice(1)}`);
+  //       if (element) {
+  //         element.scrollIntoView({ behavior: "smooth" });
+  //       }
+  //     }
+  //   }, [hash]);
 
-    return null;
-  }
+  //   return null;
+  // }
 
   return (
     <>
-      <ScrollToTop />
+      {/* <ScrollToTop /> */}
       <nav className="nav" onClick={(e) => changePage(e)}>
         <div className="nav-center">
           <ul className="nav-links">
-            <HashLink to="#DealDetailsPage">
+            <HashLink to="/">
               <h1 className="title condiment-regular">Voyager</h1>
             </HashLink>
-            <li id={`${activeNode === "Explore" ? "selected" : ""}`}>
+            <li id={`${activeNode === "PlanningPage" ? "selected" : ""}`}>
+              <HashLink to="/PlanningPage">Plan</HashLink>
+            </li>
+            <li id={`${activeNode === "DealDetailsPage" ? "selected" : ""}`}>
+              <HashLink to="/DealDetailsPage">Deals</HashLink>
+            </li>
+            <li id={`${activeNode === "TripHistoryPage" ? "selected" : ""}`}>
+              <HashLink to="/TripHistoryPage">Trip History</HashLink>
+            </li>
+            <li id={`${activeNode === "DiscoveryPage" ? "selected" : ""}`}>
+              <HashLink to="/">Discovery</HashLink>
+            </li>
+            {/* <li id={`${activeNode === "Explore" ? "selected" : ""}`}>
               <HashLink to="#ExploreComponent">Explore</HashLink>
             </li>
             <li id={`${activeNode === "Discover" ? "selected" : ""}`}>
@@ -51,20 +63,10 @@ function NavigationComponent() {
             </li>
             <li id={`${activeNode === "Planning" ? "selected" : ""}`}>
               <HashLink to="#PlanningPage">Planning</HashLink>
-            </li>
+            </li> */}
           </ul>
         </div>
       </nav>
-      <Routes>
-        {/* <Route path="/" />
-        <Route path="#DealDetailsPage" element={<DealDetailsPage />} />
-        <Route path="#ExploreComponent" element={<ExploreComponent />} />
-        <Route path="#DiscoverComponent" element={<DiscoverComponent />} />
-        <Route path="#PlacesComponent" element={<PlacesComponent />} />
-        <Route path="#StaysComponent" element={<StaysComponent />} />
-        <Route path="#TripsComponent" element={<TripsComponent />} />
-        <Route path="#PlanningPage" element={<PlanningPage />} /> */}
-      </Routes>
     </>
   );
 }
