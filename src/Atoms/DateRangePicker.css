@@ -1,0 +1,58 @@
+.date-range-picker {
+  font-family: Arial, sans-serif;
+}
+
+.date-range-picker header {
+  margin-bottom: 20px;
+}
+
+.date-range-picker h1 {
+  font-size: 24px;
+  color: #333;
+  text-align: center;
+}
+
+.date-range-picker .react-calendar {
+  width: 350px;
+  max-width: 100%;
+  background: white;
+  border: 1px solid #a0a096;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.125em;
+}
+
+.date-range-picker .react-calendar__tile {
+  max-width: 100%;
+  padding: 10px 6.6667px;
+  background: none;
+  text-align: center;
+  line-height: 16px;
+}
+
+.date-range-picker .react-calendar__tile--active {
+  background: #006edc;
+  color: white;
+}
+
+.date-range-picker .react-calendar__tile--now {
+  background: #ffff76;
+}
+
+.date-range-picker .react-calendar__tile--hover {
+  background: #e6e6e6;
+}
+
+.date-range-picker .close-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #4285f4;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.date-range-picker .close-button:hover {
+  background-color: #1967d2;
+}

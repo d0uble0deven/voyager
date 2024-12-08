@@ -26,16 +26,8 @@ function App() {
         <Route path="/PlanningPage" element={<PlanningPage />} />
         <Route path="/TripHistoryPage" element={<TripHistoryPage />} />
         {/* <Route path="/" /> */}
+        <Route path="/two" element={<DiscoveryPage />} />
         <Route path="/" element={<DiscoveryPage />} />
-
-        {/* <Route path="/" />
-        <Route path="#DealDetailsPage" element={<DealDetailsPage />} />
-        <Route path="#ExploreComponent" element={<ExploreComponent />} />
-        <Route path="#DiscoverComponent" element={<DiscoverComponent />} />
-        <Route path="#PlacesComponent" element={<PlacesComponent />} />
-        <Route path="#StaysComponent" element={<StaysComponent />} />
-        <Route path="#TripsComponent" element={<TripsComponent />} />
-        <Route path="#PlanningPage" element={<PlanningPage />} /> */}
       </Routes>
     </>
   );

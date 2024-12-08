@@ -32,11 +32,12 @@ function CardComponent(props) {
           <video
             ref={videoRef}
             style={{
-              zIndex: "1000",
+              zIndex: "1",
               width: "100%",
               objectFit: "cover",
               aspectRatio: "16/9",
               borderRadius: "10px",
+              maxHeight: "20rem",
             }}
             muted
             autoPlay

@@ -38,7 +38,7 @@ function NavigationComponent() {
               <HashLink to="/PlanningPage">Plan</HashLink>
             </li>
             <li id={`${activeNode === "DealDetailsPage" ? "selected" : ""}`}>
-              <HashLink to="/DealDetailsPage">Deals</HashLink>
+              <HashLink to="/DealDetailsPage">DealDetails</HashLink>
             </li>
             <li id={`${activeNode === "TripHistoryPage" ? "selected" : ""}`}>
               <HashLink to="/TripHistoryPage">Trip History</HashLink>

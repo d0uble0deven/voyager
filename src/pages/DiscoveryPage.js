@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import "./DiscoveryPage.css";
 
-import GlobeComponent from "../GlobeComponent";
+// import GlobeComponent from "../GlobeComponent";
 import NavigationComponent from "../NavigationComponent";
-import NavBar from "../Navbar";
+// import NavBar from "../Navbar";
+import TopBar from "../TopBar";
 
 import CardCarousel from "../Organisms/CardCarousel";
 
@@ -27,7 +28,8 @@ function DiscoveryPage() {
           </div>
         </div>
         <div className="top-bar">
-          <NavBar />
+          {/* <NavBar /> */}
+          <TopBar />
         </div>
         <div className="ExploreComponent">
           <hr />

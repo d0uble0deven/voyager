@@ -7,13 +7,26 @@ import "glider-js/glider.min.css";
 // function CardCarousel(experiences) {
 function CardCarousel({ sectionTitle, experiences, idx }) {
   let copyWriteTitle = "";
+
+  const calculateSlidesToShow = (idx) => {
+    if (idx === 0) return 1.15;
+    if (idx === 1) return 2.15;
+    if (idx % 2 === 1) return 2.15;
+    if (idx % 3 === 1) return 1.15;
+    if (idx >= 2) return 3.15;
+  };
+
+  // Example usage:
+  // const slidesToShow = calculateSlidesToShow(idx); // idx ranges from 0 to 100
+
   return (
     <>
       <h3 className="sub-header ">{sectionTitle}</h3>
       <Glider
         draggable
         hasDots
-        slidesToShow={`${idx + 1}.15`}
+        slidesToShow={`${calculateSlidesToShow(idx)}`}
+        // slidesToShow={`${idx + 1}.15`}
         // slidesToShow={1.15}
         slidesToScroll="auto"
         scrollLock="true"
