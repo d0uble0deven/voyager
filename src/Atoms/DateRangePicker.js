@@ -8,8 +8,6 @@ function DateRangePicker({ query, onSelect, onClose }) {
   const [activeStartDate, setActiveStartDate] = useState(new Date());
   const [pendingDayInput, setPendingDayInput] = useState(null);
 
-  console.log("DateRangePicker");
-
   useEffect(() => {
     if (query && /^[0-9]+$/.test(query)) {
       const month = parseInt(query, 10) - 1;

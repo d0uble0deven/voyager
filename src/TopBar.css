@@ -22,16 +22,48 @@
 }
 
 .search-bar.expanded {
-  width: 500px;
+  width: 600px;
 }
 
 .search-input {
-  flex: 1;
+  flex: 2;
   border: none;
   outline: none;
   font-size: 16px;
   padding: 0;
   background-color: transparent;
+}
+
+.search-options {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.destination-buttons {
+  display: flex;
+  gap: 8px;
+  margin-right: 8px;
+}
+
+.destination-button {
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 16px;
+  transition: background-color 0.3s;
+}
+
+.destination-button:hover {
+  background-color: #f1f3f4;
+}
+
+.destination-button span {
+  margin-left: 4px;
+  font-size: 14px;
 }
 
 .search-button {
@@ -45,13 +77,15 @@
   width: 40px;
   height: 40px;
   color: #4285f4;
+  margin-left: auto;
 }
 
 .search-button:hover {
   color: #1967d2;
 }
 
-.calendar-button {
+.calendar-button,
+.people-counter {
   background: none;
   border: none;
   padding: 0;
@@ -61,33 +95,55 @@
   justify-content: center;
   width: 40px;
   height: 40px;
-  color: #4285f4;
+  color: #000;
   margin-right: 4px;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.calendar-button.visible {
-  opacity: 1;
 }
 
 .calendar-button:hover {
   color: #1967d2;
 }
 
-.date-picker-modal {
+.selected-dates {
+  font-size: 14px;
+  color: #5f6368;
+  margin-right: 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.date-separator {
+  margin: 0 4px;
+  color: #5f6368;
+}
+
+.people-counter.people-counter {
+  position: relative;
+  margin-right: 8px;
+}
+
+.people-count {
   position: absolute;
-  top: 100%;
+  top: 2px;
+  right: 2px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
   left: 0;
   width: 100%;
+  height: 100%;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
   z-index: 1000;
 }
 
-.date-picker-backdrop {
-  position: fixed;
+.modal-backdrop {
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -95,12 +151,11 @@
   background: rgba(0, 0, 0, 0.5);
 }
 
-.date-picker-content {
+.modal-content {
   position: relative;
   background: #fff;
   padding: 20px;
   border-radius: 12px;
   z-index: 1001;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-  margin-top: 10px;
 }

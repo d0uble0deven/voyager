@@ -1,18 +1,27 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Search, Calendar } from "lucide-react";
+import { Search, Calendar, MapPin, Plane } from "lucide-react";
 import "./TopBar.css";
 import DateRangePicker from "./Atoms/DateRangePicker";
+import DestinationSearch from "./Atoms/DestinationSearch";
+import PeopleCounter from "./Atoms/PeopleCounter";
 
 function TopBar() {
   const [query, setQuery] = useState("");
   const [isExpanded, setIsExpanded] = useState(false);
   const [showDatePicker, setShowDatePicker] = useState(false);
+  const [showDestinationSearch, setShowDestinationSearch] = useState(false);
+  const [showPeopleCounter, setShowPeopleCounter] = useState(false);
+  const [peopleCount, setPeopleCount] = useState(1);
+  const [arrival, setArrival] = useState("");
+  const [departure, setDeparture] = useState("");
   const searchBarRef = useRef(null);
   const datePickerRef = useRef(null);
+  const destinationSearchRef = useRef(null);
+  const peopleCounterRef = useRef(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Searching for:", query);
+    console.log("Searching for:", { query, arrival, departure, peopleCount });
     // Implement your search logic here
   };
 
@@ -27,32 +36,35 @@ function TopBar() {
     setShowDatePicker(false);
   };
 
-  const handleInputChange = (e) => {
-    setQuery(e.target.value);
-  };
-
   const handleInputFocus = () => {
     setIsExpanded(true);
   };
 
   const handleInputBlur = () => {
-    // Use setTimeout to allow the calendar icon click event to trigger first
-    setTimeout(() => {
-      if (!searchBarRef.current?.contains(document.activeElement)) {
-        setIsExpanded(false);
-      }
-    }, 0);
+    if (!showDestinationSearch && !showDatePicker && !showPeopleCounter) {
+      setIsExpanded(false);
+    }
+  };
+
+  const handleDestinationSelect = (type, destination) => {
+    if (type === "arrival") {
+      setArrival(destination);
+    } else {
+      setDeparture(destination);
+    }
+  };
+
+  const handlePeopleCountChange = (count) => {
+    setPeopleCount(count);
   };
 
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (
-        datePickerRef.current &&
-        !datePickerRef.current.contains(event.target) &&
         searchBarRef.current &&
         !searchBarRef.current.contains(event.target)
       ) {
-        setShowDatePicker(false);
+        handleInputBlur();
       }
     };
 
@@ -72,39 +84,127 @@ function TopBar() {
         <input
           type="text"
           className="search-input"
-          placeholder="Search or enter dates"
+          placeholder={
+            isExpanded ? "Search experiences..." : "Search experiences..."
+          }
           value={query}
-          onChange={handleInputChange}
+          onChange={(e) => setQuery(e.target.value)}
           onFocus={handleInputFocus}
-          onBlur={handleInputBlur}
         />
+        {isExpanded && (
+          <div className="search-options">
+            <div className="destination-buttons">
+              <button
+                type="button"
+                className="destination-button"
+                onClick={() => setShowDestinationSearch(true)}
+              >
+                <Plane size={20} />
+                <span>{departure || "From"}</span>
+              </button>
+              <button
+                type="button"
+                className="destination-button"
+                onClick={() => setShowDestinationSearch(true)}
+              >
+                <MapPin size={20} />
+                <span>{arrival || "To"}</span>
+              </button>
+            </div>
+            <div className="selected-dates">
+              {query && (
+                <>
+                  {query} <span className="date-separator">|</span>
+                </>
+              )}
+            </div>
+            <button
+              type="button"
+              className="calendar-button"
+              onClick={(e) => {
+                e.preventDefault();
+                setShowDatePicker(true);
+              }}
+            >
+              <Calendar size={20} />
+            </button>
+            <div
+              className="people-counter"
+              onClick={() => setShowPeopleCounter(true)}
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+              <span className="people-count">{peopleCount}</span>
+            </div>
+          </div>
+        )}
         <button
-          type="button"
-          className={`calendar-button ${
-            isExpanded || query.length > 0 ? "visible" : ""
-          }`}
-          onClick={(e) => {
-            e.preventDefault();
-            setShowDatePicker(true);
-          }}
+          type="submit"
+          className="search-button"
+          onClick={handleInputFocus}
         >
-          <Calendar size={20} />
-        </button>
-        <button type="submit" className="search-button">
           <Search size={20} />
         </button>
       </form>
       {showDatePicker && (
-        <div ref={datePickerRef} className="date-picker-modal">
+        <div ref={datePickerRef} className="modal">
           <div
-            className="date-picker-backdrop"
+            className="modal-backdrop"
             onClick={() => setShowDatePicker(false)}
           />
-          <div className="date-picker-content">
+          <div className="modal-content">
             <DateRangePicker
               query={query}
               onSelect={handleDateSelection}
               onClose={() => setShowDatePicker(false)}
+            />
+          </div>
+        </div>
+      )}
+      {showDestinationSearch && (
+        <div ref={destinationSearchRef} className="modal">
+          <div
+            className="modal-backdrop"
+            onClick={() => setShowDestinationSearch(false)}
+          />
+          <div className="modal-content">
+            <DestinationSearch
+              onSelectArrival={(destination) =>
+                handleDestinationSelect("arrival", destination)
+              }
+              onSelectDeparture={(destination) =>
+                handleDestinationSelect("departure", destination)
+              }
+              onClose={() => setShowDestinationSearch(false)}
+              initialArrival={arrival}
+              initialDeparture={departure}
+            />
+          </div>
+        </div>
+      )}
+      {showPeopleCounter && (
+        <div ref={peopleCounterRef} className="modal">
+          <div
+            className="modal-backdrop"
+            onClick={() => setShowPeopleCounter(false)}
+          />
+          <div className="modal-content">
+            <PeopleCounter
+              initialCount={peopleCount}
+              onCountChange={handlePeopleCountChange}
+              onClose={() => setShowPeopleCounter(false)}
             />
           </div>
         </div>
