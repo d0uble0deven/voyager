@@ -1,0 +1,100 @@
+.flight-booking-engine {
+  margin: 20px auto;
+  max-width: 600px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.flight-booking-engine h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.8em;
+  color: #333;
+}
+
+.flight-booking-engine label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+.flight-booking-engine input {
+  width: 95%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+.flight-booking-engine button {
+  width: 99%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+.flight-booking-engine input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.flight-booking-engine button {
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+  text-align: center;
+}
+
+.flight-booking-engine button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.flight-booking-engine button:hover:not(:disabled) {
+  background-color: #0056b3;
+}
+
+.flight-booking-engine h3 {
+  margin-top: 20px;
+  font-size: 1.5em;
+  color: #333;
+}
+
+.flight-booking-engine div {
+  margin-bottom: 15px;
+}
+
+.flight-booking-engine .flight-options {
+  border-top: 1px solid #ddd;
+  padding-top: 15px;
+}
+
+.flight-booking-engine .flight-option {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  background-color: #fff;
+}
+
+.flight-booking-engine .flight-option:hover {
+  background-color: #f1f1f1;
+}
+
+.flight-booking-engine pre {
+  background: #f4f4f4;
+  padding: 10px;
+  border-radius: 5px;
+  overflow: auto;
+  font-size: 0.9em;
+}

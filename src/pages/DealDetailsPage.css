@@ -1,107 +1,148 @@
 /* DealDetailsPage.css */
 
 .deal-details-page {
-  font-family: Arial, sans-serif;
-  color: #333;
+  font-family: "Roboto", Arial, sans-serif;
+  color: #444;
+  background-color: #fefefe;
+  line-height: 1.6;
+  margin: 0 auto;
+  padding: 0 20px; /* Add horizontal padding for viewport margins */
 }
 
 .skip-link {
   position: absolute;
   top: -40px;
   left: 0;
-  background: #000;
+  background: #333;
   color: #fff;
-  padding: 8px;
-  z-index: 100;
-}
-
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
-  background-color: #f8f8f8;
-}
-
-.logo {
-  font-size: 24px;
-  font-weight: bold;
-}
-
-.heder-nav a {
-  margin-left: 20px;
-  text-decoration: none;
-  color: #0073e6;
+  padding: 10px 15px;
+  z-index: 1000;
+  font-size: 14px;
+  border-radius: 5px;
 }
 
 .main-content {
-  padding: 20px;
+  padding: 40px 0; /* Add vertical padding for spacing */
 }
 
 .trip-overview {
   text-align: center;
+  margin: 40px 0;
+  padding: 30px 20px;
+  background-color: #fefefe;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.trip-overview h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
   margin-bottom: 20px;
+}
+
+.trip-overview p {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 25px;
 }
 
 .discount-price {
   color: #e63946;
   font-weight: bold;
+  font-size: 1.3rem;
 }
 
 .trip-info {
   display: flex;
   justify-content: space-around;
-  margin: 20px 0;
+  align-items: center;
+  margin: 30px 0;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.trip-info div {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+  text-align: center;
+  flex: 1;
 }
 
 .cta-button {
   display: inline-block;
-  padding: 10px 20px;
+  padding: 15px 30px;
   background-color: #0073e6;
   color: #fff;
   text-decoration: none;
   border-radius: 5px;
-  margin-top: 10px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: 15px;
+  transition: background-color 0.3s ease;
 }
 
+.cta-button:hover {
+  background-color: #005bb5;
+}
+
+.media-gallery-container {
+}
 .media-gallery {
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 15px;
-  margin-top: 20px;
+  margin-top: 30px;
 }
 
 .media-gallery img,
 .media-gallery video {
-  max-width: 150px;
+  width: 100%;
   border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.media-gallery img:hover,
+.media-gallery video:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .why-go-and-trip-dates {
   display: flex;
-  gap: 20px;
-  margin-top: 40px;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin: 50px 0;
 }
 
-.why-go {
+.why-go,
+.select-trip-dates {
   flex: 1;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .features {
   list-style-type: disc;
-  padding-left: 20px;
+  padding-left: 25px;
   margin-top: 15px;
 }
 
-.select-trip-dates {
-  flex: 1;
+.features li {
+  margin-bottom: 10px;
 }
 
 .trip-dates-card {
-  background: #f1f1f1;
   padding: 20px;
-  border-radius: 8px;
-  max-height: 300px;
+  background: #f9f9f9;
+  border-radius: 10px;
+  max-height: 800px;
   overflow-y: auto;
 }
 
@@ -112,76 +153,136 @@
 }
 
 .trip-dates-list li {
-  margin-bottom: 10px;
-}
-
-.itinerary {
-  margin-top: 40px;
-}
-
-.day {
-  margin-bottom: 20px;
-}
-
-.accommodations {
-  margin-top: 40px;
-}
-
-.hotel {
-  margin-bottom: 20px;
+  margin-bottom: 15px;
+  font-weight: 500;
+  color: #555;
 }
 
 .traveler-photos {
-  margin-top: 40px;
+  margin-top: 50px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .media-gallery-expanded {
   display: flex;
   flex-wrap: wrap;
-  gap: 15px;
-  margin-top: 20px;
+  gap: 20px;
+  margin-top: 30px;
 }
 
 .media-gallery-expanded img {
-  max-width: 100px;
-  border-radius: 8px;
+  max-width: 120px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .load-more-button {
   display: block;
-  margin: 20px auto;
-  padding: 10px 20px;
+  margin: 30px auto;
+  padding: 12px 25px;
   background-color: #0073e6;
   color: #fff;
   text-decoration: none;
   border-radius: 5px;
   text-align: center;
+  font-size: 1em;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+.load-more-button:hover {
+  background-color: #005bb5;
 }
 
 .reviews {
-  margin-top: 40px;
+  margin: 50px 0;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.reviews h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
 }
 
 .review-card {
-  background: #f1f1f1;
-  padding: 20px;
+  background: #ffffff;
   border-radius: 8px;
-  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.review-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.review-card h3 {
+  font-size: 1.5rem;
+  color: #0073e6;
+  margin-bottom: 10px;
+}
+
+.review-card p {
+  margin: 5px 0;
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.load-more-button {
+  display: block;
+  margin: 30px auto;
+  padding: 12px 25px;
+  background-color: #0073e6;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.load-more-button:hover {
+  background-color: #005bb5;
 }
 
 .footer {
-  background-color: #f8f8f8;
-  padding: 20px;
+  background-color: #ffffff;
+  padding: 30px 40px;
   text-align: center;
-  margin-top: 40px;
+  margin-top: 50px;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .contact-info {
   margin-bottom: 20px;
+  color: #666;
 }
 
 .footer-nav a {
-  margin: 0 10px;
+  margin: 0 15px;
   text-decoration: none;
   color: #0073e6;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.footer-nav a:hover {
+  color: #005bb5;
 }

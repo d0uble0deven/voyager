@@ -26,8 +26,6 @@ function CardCarousel({ sectionTitle, experiences, idx }) {
         draggable
         hasDots
         slidesToShow={`${calculateSlidesToShow(idx)}`}
-        // slidesToShow={`${idx + 1}.15`}
-        // slidesToShow={1.15}
         slidesToScroll="auto"
         scrollLock="true"
         itemWidth="500px"

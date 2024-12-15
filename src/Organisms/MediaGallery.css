@@ -1,0 +1,65 @@
+.media-gallery {
+  margin: 20px auto;
+  max-width: 800px;
+  padding: 10px;
+  position: relative;
+  overflow: hidden;
+  background: rgba(50, 50, 50, 0.85); /* Dark grey with transparency */
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Optional shadow for depth */
+}
+
+.media-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px; /* Fixed height for clipping */
+  overflow: hidden; /* Ensures media does not overflow */
+}
+
+.media-item img,
+.media-item video {
+  height: 100%; /* Ensures media fills the container's height */
+  width: auto; /* Maintains aspect ratio */
+  object-fit: cover; /* Clips media while maintaining proportional scaling */
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow for each media item */
+}
+
+.media-item video {
+  pointer-events: none; /* Prevents interactions with video (e.g., play button) */
+}
+
+.glider-track {
+  display: flex; /* Ensures items are laid out in a row */
+  gap: 15px; /* Adds spacing between each item */
+  align-items: center; /* Vertically aligns items */
+}
+
+.glider {
+  overflow: hidden;
+}
+
+.glider-prev,
+.glider-next {
+  display: none; /* Hides the navigation arrows */
+}
+
+.glider-dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.glider-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin: 0 4px;
+  background-color: #ccc;
+  cursor: pointer;
+}
+
+.glider-dot.active {
+  background-color: #0073e6;
+}
