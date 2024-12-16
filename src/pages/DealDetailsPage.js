@@ -5,6 +5,7 @@ import "./DealDetailsPage.css";
 import TestDataButton from "../TestDataButton";
 import FlightInspoComponent from "../FlightInspoComponent";
 import FlightBookingEngine from "../Organisms/FlightBookingEngine";
+import HotelBookingEngine from "../Organisms/HotelBookingEngine";
 import MediaGallery from "../Organisms/MediaGallery";
 
 const DealDetailsPage = () => {
@@ -62,6 +63,14 @@ const DealDetailsPage = () => {
             <div className="trip-dates-card">
               <ul className="trip-dates-list">
                 <FlightBookingEngine />
+              </ul>
+            </div>
+          </section>
+          <section className="select-trip-dates">
+            <h2>Select Hotel Stays</h2>
+            <div className="trip-dates-card">
+              <ul className="trip-dates-list">
+                <HotelBookingEngine />
               </ul>
             </div>
           </section>

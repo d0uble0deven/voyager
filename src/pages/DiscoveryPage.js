@@ -4,7 +4,7 @@ import "./DiscoveryPage.css";
 // import GlobeComponent from "../GlobeComponent";
 import NavigationComponent from "../NavigationComponent";
 // import NavBar from "../Navbar";
-import TopBar from "../TopBar";
+import TopBar from "../Organisms/TopBar";
 
 import CardCarousel from "../Organisms/CardCarousel";
 

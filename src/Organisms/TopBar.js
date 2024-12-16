@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Search, Calendar, MapPin, Plane } from "lucide-react";
 import "./TopBar.css";
-import DateRangePicker from "./Atoms/DateRangePicker";
-import DestinationSearch from "./Atoms/DestinationSearch";
-import PeopleCounter from "./Atoms/PeopleCounter";
+import DateRangePicker from "../Atoms/DateRangePicker";
+import DestinationSearch from "../Atoms/DestinationSearch";
+import PeopleCounter from "../Atoms/PeopleCounter";
 
 function TopBar() {
   const [query, setQuery] = useState("");
