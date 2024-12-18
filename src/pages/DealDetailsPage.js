@@ -4,9 +4,12 @@ import "./DealDetailsPage.css";
 
 import TestDataButton from "../TestDataButton";
 import FlightInspoComponent from "../FlightInspoComponent";
+
+import MediaGallery from "../Organisms/MediaGallery";
+
 import FlightBookingEngine from "../Organisms/FlightBookingEngine";
 import HotelBookingEngine from "../Organisms/HotelBookingEngine";
-import MediaGallery from "../Organisms/MediaGallery";
+import EventBookingEngine from "../Organisms/EventBookingEngine";
 
 const DealDetailsPage = () => {
   return (
@@ -57,7 +60,9 @@ const DealDetailsPage = () => {
               <li>Entrance to shrines, temples, and other local attractions</li>
             </ul>
           </section>
+        </div>
 
+        <div className="why-go-and-trip-dates">
           <section className="select-trip-dates">
             <h2>Select Trip Dates</h2>
             <div className="trip-dates-card">
@@ -71,6 +76,14 @@ const DealDetailsPage = () => {
             <div className="trip-dates-card">
               <ul className="trip-dates-list">
                 <HotelBookingEngine />
+              </ul>
+            </div>
+          </section>
+          <section className="select-trip-dates">
+            <h2>Purchase Tickets</h2>
+            <div className="trip-dates-card">
+              <ul className="trip-dates-list">
+                <EventBookingEngine />
               </ul>
             </div>
           </section>
