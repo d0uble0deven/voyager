@@ -10,6 +10,7 @@ import MediaGallery from "../Organisms/MediaGallery";
 import FlightBookingEngine from "../Organisms/FlightBookingEngine";
 import HotelBookingEngine from "../Organisms/HotelBookingEngine";
 import EventBookingEngine from "../Organisms/EventBookingEngine";
+import TripAdvisorEngine from "../Organisms/TripAdvisorEngine";
 
 const DealDetailsPage = () => {
   return (
@@ -84,6 +85,16 @@ const DealDetailsPage = () => {
             <div className="trip-dates-card">
               <ul className="trip-dates-list">
                 <EventBookingEngine />
+              </ul>
+            </div>
+          </section>
+        </div>
+        <div className="why-go-and-trip-dates">
+          <section className="select-trip-dates">
+            <h2>Select Trip Dates</h2>
+            <div className="trip-dates-card">
+              <ul className="trip-dates-list">
+                <TripAdvisorEngine />
               </ul>
             </div>
           </section>
